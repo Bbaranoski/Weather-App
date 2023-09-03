@@ -9,3 +9,11 @@ async function weather() {
 }
 
 weather()
+
+const input = document.getElementById('local')
+const form = document.querySelector('form')
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    local = input.value
+    weather()
+})
