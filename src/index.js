@@ -17,7 +17,8 @@ async function weather() {
   const feelsC = weatherData.current.feelslike_c;
   const feelsF = weatherData.current.feelslike_f;
   const humidity = weatherData.current.humidity;
-  const data = new weatherObj(c, f, feelsC, feelsF, humidity);
+  const name = weatherData.location.name;
+  const data = new weatherObj(c, f, feelsC, feelsF, humidity, name);
   domData(data);
 }
 
@@ -32,10 +33,11 @@ form.addEventListener("submit", (e) => {
   weather();
 });
 
-function weatherObj(c, f, feelsC, feelsF, humidity) {
+function weatherObj(c, f, feelsC, feelsF, humidity, name) {
   this.c = c;
   this.f = f;
   this.feelsC = feelsC;
   this.feelsF = feelsF;
   this.humidity = humidity;
+  this.name = name;
 }
