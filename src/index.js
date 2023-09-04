@@ -1,4 +1,5 @@
 import "./style.css";
+import { domData } from './dom.js';
 
 let local = "london";
 
@@ -17,7 +18,7 @@ async function weather() {
   const feelsF = weatherData.current.feelslike_f;
   const humidity = weatherData.current.humidity;
   const data = new weatherObj(c, f, feelsC, feelsF, humidity)
-  console.log(data.c)
+  domData(data)
 }
 
 weather();
